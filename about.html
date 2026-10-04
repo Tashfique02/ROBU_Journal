@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Workshops & Milestones | ROBU</title>
+    <title>About Us | Workshops, Milestones & Events | ROBU</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -41,7 +41,7 @@
                 <nav class="flex items-center gap-4 sm:gap-6">
                     <a href="index.html" class="text-sm font-medium text-[#a39e93] hover:text-[#f5f4f0] transition-colors">&larr; Home</a>
                     <a href="departments.html" class="text-sm font-medium text-[#a39e93] hover:text-[#f5f4f0] transition-colors">Departments</a>
-                    <a href="https://docs.google.com/forms/" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://join.bracurobu.com/" target="_blank" rel="noopener noreferrer" 
                        class="bg-[#da7756] hover:bg-[#e0886a] text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors flex items-center gap-2 shadow-sm">
                         Join Us
                     </a>
@@ -59,30 +59,24 @@
         </a>
 
         <h1 class="text-4xl sm:text-5xl font-bold text-[#f5f4f0] tracking-tight mb-4">About ROBU</h1>
-        <p class="text-[#a39e93] text-base sm:text-lg mb-8">Discover our hands-on technical workshops, global competition milestones, and recruitment progression track.</p>
+        <p class="text-[#a39e93] text-base sm:text-lg mb-8">Discover our hands-on technical workshops, global competition milestones, event photo gallery, and recruitment progression track.</p>
 
         <!-- SECTION TABS MENU -->
-        <div class="flex flex-wrap items-center gap-2 sm:gap-4 mb-8 border-b border-white/10 pb-4">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-8 border-b border-white/10 pb-4">
             <button onclick="showSection('workshops')" 
-                    class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm" 
+                    class="text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm" 
                     id="btn-workshops">
                 Workshops
             </button>
-            <span class="text-2xl text-[#736e65] hidden sm:inline">|</span>
+            <span class="text-xl text-[#736e65] hidden sm:inline">|</span>
             <button onclick="showSection('milestones')" 
-                    class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
+                    class="text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
                     id="btn-milestones">
                 Milestones
             </button>
             <span class="text-2xl text-[#736e65] hidden sm:inline">|</span>
-            <button onclick="showSection('event-gallery')" 
-                    class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
-                    id="btn-event-gallery">
-                Event Gallery
-            </button>
-            <span class="text-2xl text-[#736e65] hidden sm:inline">|</span>
             <button onclick="showSection('career')" 
-                    class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
+                    class="text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
                     id="btn-career">
                 Career Track
             </button>
@@ -161,6 +155,40 @@
                 </summary>
                 <div class="mt-4 text-[#a39e93] text-sm border-t border-white/10 pt-4 leading-relaxed">
                     An intensive industrial-grade program delving into STM32 32-bit ARM Cortex microcontrollers, bare-metal C programming, RTOS task scheduling, UART/SPI/I2C communication protocols, and PCB schematic design in EasyEDA/KiCAD.
+                </div>
+            </details>
+
+            <details class="accordion-item bg-[#1a1816] rounded-xl p-5 border border-white/10 cursor-pointer transition hover:border-[#da7756]/40 group shadow-sm" data-search="ros robot operating system turtlebot gazebo nodes topics services python navigation rpm research project management fall 25">
+                <summary class="text-lg font-bold text-[#f5f4f0] flex items-center justify-between outline-none select-none">
+                    <span class="flex items-center gap-3">
+                        <span class="w-7 h-7 rounded bg-[#da7756]/10 text-[#da7756] flex items-center justify-center text-xs font-bold">06</span>
+                        Introduction to ROS & Autonomous Navigation (RPM Workshop)
+                    </span>
+                    <svg class="w-5 h-5 text-[#736e65] transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="mt-4 text-[#a39e93] text-sm border-t border-white/10 pt-4 leading-relaxed space-y-4">
+                    <p>
+                        Organized by the <strong class="text-[#f5f4f0]">Research and Project Management (RPM) Department</strong> in Fall ’25, this workshop guides recruits through fundamental Robot Operating System (ROS) architecture, covering ROS nodes, topics, services, workspaces, Gazebo 3D simulation environments, and TurtleBot sensor data processing for autonomous navigation behaviors.
+                    </p>
+
+                    <div class="quote-editorial bg-[#121110] p-4 rounded-lg border border-white/10 text-xs sm:text-sm space-y-2">
+                        <h4 class="font-serif-editorial text-lg text-[#e58b6d] font-normal italic">Participant Spotlight: "My Journey Through the Introduction to ROS Workshop"</h4>
+                        <p class="text-[#e2ded4] italic">
+                            "I’m incredibly grateful to have been selected as the winner of the Introduction to ROS Workshop task organized by the Research and Project Management department in Fall ‘25.
+                        </p>
+                        <p class="text-[#a39e93]">
+                            As a complete beginner in ROS, I was overwhelmed with concepts like ROS nodes, topics, services, workspaces, and TurtleBot sensors when I started out. Struggling to understand the TurtleBot documentation and sensor data, I wanted to give up many times. The final task felt quite tough, but I’m glad I pushed through and completed the entire thing.
+                        </p>
+                        <p class="text-[#a39e93]">
+                            One of the most struggling points during this task was the final hours. As I was nearing the end and trying to put everything together, my laptop kept crashing while trying to run the Gazebo simulation. Each time, I restarted my system and tested the code again—navigating through VirtualBox and Gazebo simulation workloads.
+                        </p>
+                        <p class="text-[#a39e93]">
+                            I struggled with the code quite a bit, too. Although I was comfortable with object-oriented programming in Java, I found myself having trouble applying the same in Python. I searched up tutorials online and accessed resources provided by the instructor. At the end, I was able to implement an autonomous navigation behavior on TurtleBot through the integration of ROS nodes and topics.
+                        </p>
+                        <p class="text-[#a39e93] font-medium text-[#da7756]">
+                            Despite the difficulties, I had a lot of fun doing the final task and got to learn a lot of things. I’m truly grateful for the opportunity to have learnt ROS in such a supportive and encouraging environment."
+                        </p>
+                    </div>
                 </div>
             </details>
         </div>
@@ -246,51 +274,6 @@
             </details>
         </div>
 
-        <!-- EVENT PHOTO GALLERY SECTION -->
-        <section id="event-gallery-section" class="hidden bg-[#1a1816] rounded-xl p-6 sm:p-8 border border-white/10 shadow-sm" aria-labelledby="event-gallery-title">
-            <div class="mb-6">
-                <h2 id="event-gallery-title" class="text-2xl font-bold text-[#f5f4f0] mb-2">Event Photo Showcase</h2>
-                <p class="text-[#a39e93] text-sm sm:text-base">Highlights from national competitions, global rover challenges, and underwater robotics showcases. Click any image to view it full screen.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                <article class="card-claude overflow-hidden">
-                    <button type="button" class="gallery-image-button block w-full text-left" aria-label="View TRACTION National Festival photo full screen">
-                        <img src="ROBU_Photos/Events/Traction.jpg" alt="ROBU members at the TRACTION National Festival" class="w-full h-52 object-cover" loading="lazy">
-                    </button>
-                    <div class="p-4">
-                        <h3 class="text-base font-bold text-[#f5f4f0]">TRACTION National Festival</h3>
-                        <p class="text-[#a39e93] text-sm mt-1">Flagship robotics tournament organized by ROBU.</p>
-                    </div>
-                </article>
-                <article class="card-claude overflow-hidden">
-                    <button type="button" class="gallery-image-button block w-full text-left" aria-label="View BRACU Mongol-Tori at URC 2026 photo full screen">
-                        <img src="ROBU_Photos/Events/URC_2026_1.jpg" alt="BRACU Mongol-Tori team at the University Rover Challenge 2026" class="w-full h-52 object-cover" loading="lazy">
-                    </button>
-                    <div class="p-4">
-                        <h3 class="text-base font-bold text-[#f5f4f0]">BRACU Mongol-Tori (URC 2026)</h3>
-                        <p class="text-[#a39e93] text-sm mt-1">Global 7th place team at Utah Mars Desert Research Station.</p>
-                    </div>
-                </article>
-                <article class="card-claude overflow-hidden">
-                    <button type="button" class="gallery-image-button block w-full text-left" aria-label="View BRACU Duburi at RoboSub 2025 photo full screen">
-                        <img src="ROBU_Photos/Events/robosub.jpg" alt="BRACU Duburi team preparing for RoboSub 2025" class="w-full h-52 object-cover" loading="lazy">
-                    </button>
-                    <div class="p-4">
-                        <h3 class="text-base font-bold text-[#f5f4f0]">BRACU Duburi (RoboSub 2025)</h3>
-                        <p class="text-[#a39e93] text-sm mt-1">International AUV team in California, USA.</p>
-                    </div>
-                </article>
-                <article class="card-claude overflow-hidden">
-                    <button type="button" class="gallery-image-button block w-full text-left" aria-label="View IEB Project Showcasing 2026 championship photo full screen">
-                        <img src="ROBU_Photos/Events/IEB_Project_Showcasing_2026.png" alt="BRACU Duburi celebrating its IEB Project Showcasing 2026 championship" class="w-full h-52 object-contain bg-black" loading="lazy">
-                    </button>
-                    <div class="p-4">
-                        <p class="text-base font-bold text-[#f5f4f0]">The Champion of IEB Project Showcasing 2026</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
         <!-- RECRUITMENT CAREER TRACK SECTION -->
         <div id="career-section" class="space-y-6 hidden">
             <div class="bg-[#1a1816] p-6 sm:p-8 rounded-xl border border-white/10 shadow-sm">
@@ -333,13 +316,6 @@
 
     </main>
 
-    <div id="gallery-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Event photo viewer" hidden>
-        <button type="button" id="gallery-lightbox-close" class="lightbox-close" aria-label="Close photo viewer">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-        <img id="gallery-lightbox-image" class="lightbox-content" alt="">
-    </div>
-
     <!-- FOOTER -->
     <footer class="bg-[#0e0d0c] border-t border-white/10 text-[#a39e93] py-6 text-center text-sm">
         <p>&copy; 2026 ROBU IT Department. All rights reserved.</p>
@@ -355,14 +331,38 @@
             document.getElementById('scroll-progress').style.width = scrolled + '%';
         });
 
+        // Lightbox Modal Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
         function showSection(section) {
             document.getElementById('workshops-section').classList.add('hidden');
             document.getElementById('milestones-section').classList.add('hidden');
-            document.getElementById('event-gallery-section').classList.add('hidden');
             document.getElementById('career-section').classList.add('hidden');
 
             const searchContainer = document.getElementById('about-search-container');
-            if (section === 'career' || section === 'event-gallery') {
+            if (section === 'career') {
                 searchContainer.classList.add('hidden');
             } else {
                 searchContainer.classList.remove('hidden');
@@ -370,27 +370,23 @@
 
             const btnW = document.getElementById('btn-workshops');
             const btnM = document.getElementById('btn-milestones');
-            const btnG = document.getElementById('btn-event-gallery');
             const btnC = document.getElementById('btn-career');
 
             // Reset tab styles
-            [btnW, btnM, btnG, btnC].forEach(b => {
+            [btnW, btnM, btnC].forEach(b => {
                 b.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60";
             });
 
             // Activate target section
             if (section === 'workshops') {
                 document.getElementById('workshops-section').classList.remove('hidden');
-                btnW.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
+                btnW.className = "text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
             } else if (section === 'milestones') {
                 document.getElementById('milestones-section').classList.remove('hidden');
                 btnM.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
-            } else if (section === 'event-gallery') {
-                document.getElementById('event-gallery-section').classList.remove('hidden');
-                btnG.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
             } else if (section === 'career') {
                 document.getElementById('career-section').classList.remove('hidden');
-                btnC.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
+                btnC.className = "text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
             }
         }
 
@@ -443,10 +439,12 @@
             });
         });
 
-        // Support opening career tab via URL query parameter ?tab=career
+        // Support opening career or events tab via URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('tab') === 'career') {
             showSection('career');
+        } else if (urlParams.get('tab') === 'events') {
+            showSection('events');
         } else if (urlParams.get('tab') === 'milestones') {
             showSection('milestones');
         } else if (urlParams.get('tab') === 'events') {
