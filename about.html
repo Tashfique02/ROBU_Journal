@@ -75,6 +75,12 @@
                 Milestones
             </button>
             <span class="text-2xl text-[#736e65] hidden sm:inline">|</span>
+            <button onclick="showSection('event-gallery')" 
+                    class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
+                    id="btn-event-gallery">
+                Event Gallery
+            </button>
+            <span class="text-2xl text-[#736e65] hidden sm:inline">|</span>
             <button onclick="showSection('career')" 
                     class="text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
                     id="btn-career">
@@ -240,6 +246,51 @@
             </details>
         </div>
 
+        <!-- EVENT PHOTO GALLERY SECTION -->
+        <section id="event-gallery-section" class="hidden bg-[#1a1816] rounded-xl p-6 sm:p-8 border border-white/10 shadow-sm" aria-labelledby="event-gallery-title">
+            <div class="mb-6">
+                <h2 id="event-gallery-title" class="text-2xl font-bold text-[#f5f4f0] mb-2">Event Photo Showcase</h2>
+                <p class="text-[#a39e93] text-sm sm:text-base">Highlights from national competitions, global rover challenges, and underwater robotics showcases. Click any image to view it full screen.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <article class="card-claude overflow-hidden">
+                    <button type="button" class="gallery-image-button block w-full text-left" aria-label="View TRACTION National Festival photo full screen">
+                        <img src="ROBU_Photos/Events/Traction.jpg" alt="ROBU members at the TRACTION National Festival" class="w-full h-52 object-cover" loading="lazy">
+                    </button>
+                    <div class="p-4">
+                        <h3 class="text-base font-bold text-[#f5f4f0]">TRACTION National Festival</h3>
+                        <p class="text-[#a39e93] text-sm mt-1">Flagship robotics tournament organized by ROBU.</p>
+                    </div>
+                </article>
+                <article class="card-claude overflow-hidden">
+                    <button type="button" class="gallery-image-button block w-full text-left" aria-label="View BRACU Mongol-Tori at URC 2026 photo full screen">
+                        <img src="ROBU_Photos/Events/URC_2026_1.jpg" alt="BRACU Mongol-Tori team at the University Rover Challenge 2026" class="w-full h-52 object-cover" loading="lazy">
+                    </button>
+                    <div class="p-4">
+                        <h3 class="text-base font-bold text-[#f5f4f0]">BRACU Mongol-Tori (URC 2026)</h3>
+                        <p class="text-[#a39e93] text-sm mt-1">Global 7th place team at Utah Mars Desert Research Station.</p>
+                    </div>
+                </article>
+                <article class="card-claude overflow-hidden">
+                    <button type="button" class="gallery-image-button block w-full text-left" aria-label="View BRACU Duburi at RoboSub 2025 photo full screen">
+                        <img src="ROBU_Photos/Events/robosub.jpg" alt="BRACU Duburi team preparing for RoboSub 2025" class="w-full h-52 object-cover" loading="lazy">
+                    </button>
+                    <div class="p-4">
+                        <h3 class="text-base font-bold text-[#f5f4f0]">BRACU Duburi (RoboSub 2025)</h3>
+                        <p class="text-[#a39e93] text-sm mt-1">International AUV team in California, USA.</p>
+                    </div>
+                </article>
+                <article class="card-claude overflow-hidden">
+                    <button type="button" class="gallery-image-button block w-full text-left" aria-label="View IEB Project Showcasing 2026 championship photo full screen">
+                        <img src="ROBU_Photos/Events/IEB_Project_Showcasing_2026.png" alt="BRACU Duburi celebrating its IEB Project Showcasing 2026 championship" class="w-full h-52 object-contain bg-black" loading="lazy">
+                    </button>
+                    <div class="p-4">
+                        <p class="text-base font-bold text-[#f5f4f0]">The Champion of IEB Project Showcasing 2026</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
         <!-- RECRUITMENT CAREER TRACK SECTION -->
         <div id="career-section" class="space-y-6 hidden">
             <div class="bg-[#1a1816] p-6 sm:p-8 rounded-xl border border-white/10 shadow-sm">
@@ -282,6 +333,13 @@
 
     </main>
 
+    <div id="gallery-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Event photo viewer" hidden>
+        <button type="button" id="gallery-lightbox-close" class="lightbox-close" aria-label="Close photo viewer">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <img id="gallery-lightbox-image" class="lightbox-content" alt="">
+    </div>
+
     <!-- FOOTER -->
     <footer class="bg-[#0e0d0c] border-t border-white/10 text-[#a39e93] py-6 text-center text-sm">
         <p>&copy; 2026 ROBU IT Department. All rights reserved.</p>
@@ -300,10 +358,11 @@
         function showSection(section) {
             document.getElementById('workshops-section').classList.add('hidden');
             document.getElementById('milestones-section').classList.add('hidden');
+            document.getElementById('event-gallery-section').classList.add('hidden');
             document.getElementById('career-section').classList.add('hidden');
 
             const searchContainer = document.getElementById('about-search-container');
-            if (section === 'career') {
+            if (section === 'career' || section === 'event-gallery') {
                 searchContainer.classList.add('hidden');
             } else {
                 searchContainer.classList.remove('hidden');
@@ -311,10 +370,11 @@
 
             const btnW = document.getElementById('btn-workshops');
             const btnM = document.getElementById('btn-milestones');
+            const btnG = document.getElementById('btn-event-gallery');
             const btnC = document.getElementById('btn-career');
 
             // Reset tab styles
-            [btnW, btnM, btnC].forEach(b => {
+            [btnW, btnM, btnG, btnC].forEach(b => {
                 b.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60";
             });
 
@@ -325,11 +385,44 @@
             } else if (section === 'milestones') {
                 document.getElementById('milestones-section').classList.remove('hidden');
                 btnM.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
+            } else if (section === 'event-gallery') {
+                document.getElementById('event-gallery-section').classList.remove('hidden');
+                btnG.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
             } else if (section === 'career') {
                 document.getElementById('career-section').classList.remove('hidden');
                 btnC.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
             }
         }
+
+        const galleryLightbox = document.getElementById('gallery-lightbox');
+        const galleryLightboxImage = document.getElementById('gallery-lightbox-image');
+        let galleryTrigger = null;
+        document.querySelectorAll('.gallery-image-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const image = button.querySelector('img');
+                galleryTrigger = button;
+                galleryLightboxImage.src = image.src;
+                galleryLightboxImage.alt = image.alt;
+                galleryLightbox.hidden = false;
+                galleryLightbox.classList.add('active');
+                document.getElementById('gallery-lightbox-close').focus();
+            });
+        });
+
+        function closeGalleryLightbox() {
+            galleryLightbox.classList.remove('active');
+            galleryLightbox.hidden = true;
+            galleryLightboxImage.removeAttribute('src');
+            if (galleryTrigger) galleryTrigger.focus();
+        }
+
+        document.getElementById('gallery-lightbox-close').addEventListener('click', closeGalleryLightbox);
+        galleryLightbox.addEventListener('click', event => {
+            if (event.target === galleryLightbox) closeGalleryLightbox();
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeGalleryLightbox();
+        });
 
         // Instant Filter JS for Workshops & Milestones
         const aboutSearch = document.getElementById('about-search');
@@ -356,6 +449,8 @@
             showSection('career');
         } else if (urlParams.get('tab') === 'milestones') {
             showSection('milestones');
+        } else if (urlParams.get('tab') === 'events') {
+            showSection('event-gallery');
         }
     </script>
 </body>
