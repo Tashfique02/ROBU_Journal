@@ -348,6 +348,11 @@ details[open] {
   object-fit: cover;
 }
 
+.magazine-story-ognibir figure img {
+  max-height: 520px;
+  object-fit: contain;
+}
+
 .magazine-story figure figcaption {
   padding: 0.55rem 0.75rem;
   font-family: var(--font-sans);
