@@ -86,6 +86,12 @@
                     id="btn-career">
                 Career Track
             </button>
+            <span class="text-xl text-[#736e65] hidden sm:inline">|</span>
+            <button onclick="showSection('magazine')" 
+                    class="text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60" 
+                    id="btn-magazine">
+                Magazine &amp; Writeups
+            </button>
         </div>
 
         <!-- SEARCH FILTER BAR FOR WORKSHOPS & MILESTONES -->
@@ -375,6 +381,68 @@
             </div>
         </div>
 
+        <!-- MAGAZINE & WRITEUPS SECTION -->
+        <section id="magazine-section" class="hidden space-y-8" aria-labelledby="magazine-title">
+            <header class="border-b border-white/10 pb-6">
+                <p class="text-xs uppercase tracking-[0.25em] text-[#da7756] mb-3">ROBU Journal · Features &amp; Dispatches</p>
+                <h2 id="magazine-title" class="font-serif-editorial text-3xl sm:text-4xl text-[#f5f4f0]">Magazine &amp; Writeups</h2>
+                <p class="text-[#a39e93] mt-3">Stories from our community, events, and the ideas built along the way.</p>
+            </header>
+
+            <article class="overflow-hidden rounded-2xl border border-white/10 bg-[#1a1816] shadow-lg">
+                <div class="h-1 bg-gradient-to-r from-[#da7756] via-[#d97706] to-transparent"></div>
+                <div class="p-6 sm:p-9">
+                    <div class="flex flex-wrap items-center gap-3 mb-5">
+                        <span class="text-xs uppercase tracking-[0.2em] text-[#da7756]">Event Report</span>
+                        <span class="text-[#736e65]">·</span>
+                        <span class="text-xs text-[#a39e93]">Innovation &amp; AI</span>
+                    </div>
+                    <h3 class="font-serif-editorial text-3xl sm:text-4xl leading-tight text-[#f5f4f0]">Codex event pulled off successfully</h3>
+                    <p class="mt-3 mb-7 text-sm text-[#a39e93]">By <span class="text-[#e58b6d] font-semibold">Humayra Saniat Lithe</span></p>
+                    <blockquote class="border-l-2 border-[#da7756] pl-5 py-1 mb-7 font-serif-editorial text-xl sm:text-2xl italic leading-relaxed text-[#e8c7b9]">
+                        Three hours of hands-on exploration turned ideas into working prototypes—and brought innovation, collaboration, and learning together.
+                    </blockquote>
+                    <div class="space-y-5 text-[#c4beb4] leading-8 text-[0.98rem]">
+                        <p><strong class="text-[#f5f4f0]">Codex: BuildCave</strong> successfully brought together innovation, collaboration, and hands-on learning in an engaging three-hour interactive experience, powered by <strong class="text-[#f5f4f0]">Microsoft Build</strong> and <strong class="text-[#f5f4f0]">Qwen</strong>.</p>
+                        <p>The session began with an immersive Microsoft Build hands-on lab, where participants explored Microsoft's development ecosystem through guided practical exercises. This was followed by an exciting agentic AI-driven development session where participants experienced the power of AI-assisted development and transformed ideas into working prototypes using the provided API credits.</p>
+                        <p>Throughout the event, participants actively engaged in building, experimenting, and collaborating, creating an energetic learning environment filled with curiosity and creativity. The enthusiasm and dedication shown by everyone made the session both productive and inspiring.</p>
+                        <p>The event concluded on a high note as participants showcased their builds, with the top projects earning <strong class="text-[#f5f4f0]">$100 Codex API Credits</strong> in recognition of their creativity and technical execution.</p>
+                        <p>A huge thank you to everyone who joined us and contributed to making <strong class="text-[#f5f4f0]">Codex: BuildCave</strong> a successful and memorable experience. We also extend our sincere gratitude to <strong class="text-[#f5f4f0]">Microsoft Build</strong> and <strong class="text-[#f5f4f0]">Qwen</strong> for powering the event and supporting hands-on AI learning.</p>
+                        <p class="font-serif-editorial text-xl italic text-[#e58b6d]">Here's to building more, learning more, and innovating together.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="overflow-hidden rounded-2xl border border-white/10 bg-[#1a1816] shadow-lg">
+                <div class="h-1 bg-gradient-to-r from-[#d97706] via-[#da7756] to-transparent"></div>
+                <div class="p-6 sm:p-9">
+                    <div class="flex flex-wrap items-center gap-3 mb-5">
+                        <span class="text-xs uppercase tracking-[0.2em] text-[#da7756]">Expo Feature</span>
+                        <span class="text-[#736e65]">·</span>
+                        <span class="text-xs text-[#a39e93]">Local Innovation</span>
+                    </div>
+                    <h3 class="font-serif-editorial text-3xl sm:text-4xl leading-tight text-[#f5f4f0]">Broadband Expo held successfully by ROBU</h3>
+                    <p class="mt-3 mb-7 text-sm text-[#a39e93]">By <span class="text-[#e58b6d] font-semibold">Nabil Wasit</span></p>
+                    <blockquote class="border-l-2 border-[#d97706] pl-5 py-1 mb-7 font-serif-editorial text-xl sm:text-2xl italic leading-relaxed text-[#e8c7b9]">
+                        More than a showcase, the expo reflected an innovation ecosystem in motion—and the student teams bringing it to life.
+                    </blockquote>
+                    <div class="space-y-5 text-[#c4beb4] leading-8 text-[0.98rem]">
+                        <p>At the Broadband Expo hosted by the <strong class="text-[#f5f4f0]">ISP Association of Bangladesh</strong>, a quiet but compelling story of innovation unfolded over three days—one that spoke not only of machines and prototypes, but of persistence, vision, and a growing national confidence in homegrown technology. The <strong class="text-[#f5f4f0]">Robotics Club of BRAC University</strong> successfully showcased its talents and outstanding projects to the audience.</p>
+                        <p>The initiative to participate in the expo was undertaken by ROBU, whose members curated and presented a cross-section of one of the country's longest-running student-driven robotics ecosystems. What they brought to the exhibition floor was not just a display, but a narrative built over 15 years. They have been constantly surpassing their limits to generate innovative ideas and exceptional performance.</p>
+                        <p>A major feature of the event was the presence of <strong class="text-[#f5f4f0]">Zahir Uddin Swapon</strong>, Honorable Minister of Information and Broadcasting, alongside <strong class="text-[#f5f4f0]">Rehan Asif Asad</strong>, Advisor to the Prime Minister. Their visit added both recognition and encouragement to what is, at its core, a student-led journey. It underscored a growing alignment between policy, education, and innovation. The honorable minister highly praised and appreciated the projects undertaken and made by passionate young students of ROBU.</p>
+                        <p>At the heart of the showcase was BRAC University's robotics ecosystem, an effort that has evolved steadily through years of experimentation, mentorship, and relentless effort. What began as a modest initiative has matured into a platform that not only builds machines but also nurtures talent and ideas. Here, ROBU proved that it can accomplish the best with its remarkable talents and hard work.</p>
+                        <p>Autonomous and semi-autonomous systems such as <strong class="text-[#f5f4f0]">BRACU Duburi, BRACU Mongol-Tori, and BRACU Ognibir</strong> drew significant attention, alongside service-oriented restaurant robots that demonstrated practical, everyday applications of robotics. Each system reflected a different approach to solving real-world challenges, from exploration to automation. They all serve an important purpose in the technological aspects of Bangladesh's IT sectors.</p>
+                        <p>For many visitors, the experience was unexpectedly revealing. A recurring sentiment echoed across conversations: surprise. There remains a widespread perception that cutting-edge robotics belongs elsewhere. The exhibition challenged that assumption. Here was clear evidence that advanced research and development is taking place within Bangladesh, driven by students who are not only learning but actively contributing to technological progress.</p>
+                        <p>By the third day, the exhibition settled into a more conversational rhythm. Without the formality of high-profile visits, deeper discussions began to take shape. Industry representatives, academics, and visitors engaged closely with the teams, leading to multiple expressions of interest in collaboration. These interactions pointed toward a promising bridge between academic innovation and industry application.</p>
+                        <p>What emerged over the three days was more than a showcase; it was a reflection of an ecosystem in motion. Behind each project stands a network of dedicated individuals who have invested years of effort, often working beyond formal hours, to bring ideas into reality. The impact of this work is already visible, with startups emerging from the ecosystem and its influence continuing to expand. ROBU ensured its work was highly evaluated and checked by the best critics.</p>
+                        <p>Yet perhaps the most important takeaway lies in visibility. For all its progress, much of this work remains underrepresented in public discourse. Platforms like the Broadband Expo offer a crucial opportunity to tell these stories, make visible what is being built, and inspire a wider audience. This event helped indirectly advertise the work and created a medium to interact face-to-face with policymakers, elected officials, and the general public.</p>
+                        <p>There is a growing sense that such initiatives should not be occasional, but regular. Showcasing local innovation, fostering dialogue, and connecting ecosystems with industry are not just beneficial; they are necessary. If Bangladesh is to fully realize its technological potential, it must continue to create and support more spaces where ideas can be shared openly and achievements can be seen and understood.</p>
+                        <p class="font-serif-editorial text-xl italic text-[#e58b6d]">In this sense, the ROBU effort went beyond simply attending an expo. It served as a reminder that the nation's innovation story is already being written and should be shared more frequently and more loudly.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
     </main>
 
     <div id="gallery-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Event photo viewer" hidden>
@@ -404,9 +472,10 @@
             document.getElementById('milestones-section').classList.add('hidden');
             document.getElementById('events-section').classList.add('hidden');
             document.getElementById('career-section').classList.add('hidden');
+            document.getElementById('magazine-section').classList.add('hidden');
 
             const searchContainer = document.getElementById('about-search-container');
-            if (section === 'career' || section === 'events') {
+            if (section === 'career' || section === 'events' || section === 'magazine') {
                 searchContainer.classList.add('hidden');
             } else {
                 searchContainer.classList.remove('hidden');
@@ -416,9 +485,10 @@
             const btnM = document.getElementById('btn-milestones');
             const btnE = document.getElementById('btn-events');
             const btnC = document.getElementById('btn-career');
+            const btnMagazine = document.getElementById('btn-magazine');
 
             // Reset tab styles
-            [btnW, btnM, btnE, btnC].forEach(b => {
+            [btnW, btnM, btnE, btnC, btnMagazine].forEach(b => {
                 b.className = "text-xl sm:text-2xl font-bold px-4 py-2 rounded-xl transition text-[#a39e93] hover:text-white hover:bg-[#1a1816]/60";
             });
 
@@ -435,6 +505,9 @@
             } else if (section === 'career') {
                 document.getElementById('career-section').classList.remove('hidden');
                 btnC.className = "text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
+            } else if (section === 'magazine') {
+                document.getElementById('magazine-section').classList.remove('hidden');
+                btnMagazine.className = "text-lg sm:text-xl font-bold px-4 py-2 rounded-xl transition text-white bg-[#1a1816] border border-white/10 shadow-sm";
             }
         }
 
@@ -487,7 +560,7 @@
             });
         });
 
-        // Support opening career or events tab via URL query parameter
+        // Support opening a section directly via URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('tab') === 'career') {
             showSection('career');
@@ -495,6 +568,8 @@
             showSection('events');
         } else if (urlParams.get('tab') === 'milestones') {
             showSection('milestones');
+        } else if (urlParams.get('tab') === 'magazine') {
+            showSection('magazine');
         }
     </script>
 </body>
