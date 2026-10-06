@@ -255,8 +255,7 @@ details[open] {
   font-family: var(--font-serif);
   font-size: clamp(2.8rem, 7vw, 5.4rem);
   font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 0.95;
+  line-height: 1.08;
 }
 
 .magazine-name span {
@@ -308,8 +307,7 @@ details[open] {
   font-family: var(--font-serif);
   font-size: clamp(1.9rem, 3.2vw, 2.8rem);
   font-weight: 400;
-  line-height: 0.99;
-  letter-spacing: -0.025em;
+  line-height: 1.12;
 }
 
 .magazine-story p,
@@ -318,6 +316,10 @@ details[open] {
   font-family: var(--font-serif);
   font-size: 1rem;
   line-height: 1.55;
+}
+
+.magazine-story .space-y-5 > p + p {
+  margin-top: 1.1rem;
 }
 
 .magazine-story p > span,
@@ -333,23 +335,28 @@ details[open] {
   border-color: #28614f;
   color: #28614f;
   font-size: 1.2rem;
+  line-height: 1.65;
 }
 
 .magazine-story figure {
-  border-color: #d8d5cc;
-  background: #eeece4;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+  border: 0;
+  background: transparent;
   border-radius: 0;
 }
 
 .magazine-story figure img {
   display: block;
   width: 100%;
-  max-height: 300px;
-  object-fit: cover;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
 }
 
 .magazine-story-ognibir figure img {
-  max-height: 520px;
+  max-height: none;
   object-fit: contain;
 }
 
@@ -378,8 +385,56 @@ details[open] {
   font-size: clamp(2.7rem, 6vw, 5rem);
 }
 
+.magazine-story-kicker,
+.magazine-story-byline {
+  color: #655f55;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.magazine-story-kicker {
+  margin-bottom: 0.7rem;
+  color: #28614f;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.magazine-story-heartbeat h3 {
+  max-width: none;
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+}
+
+.magazine-story-byline {
+  margin: 0 0 1.1rem;
+  letter-spacing: 0;
+}
+
+.magazine-story-heartbeat figure {
+  float: left;
+  width: 46%;
+  max-width: 46%;
+  margin: 0 1.25rem 0.5rem 0;
+}
+
+.magazine-story-heartbeat::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.magazine-story-heartbeat figure img {
+  max-height: none;
+  object-fit: contain;
+}
+
+.magazine-story-heartbeat blockquote {
+  margin: 1.25rem 0;
+}
+
 .magazine-story-feature figure img {
-  max-height: min(65vh, 640px);
+  max-height: none;
   object-fit: contain;
 }
 
@@ -401,7 +456,7 @@ details[open] {
 }
 
 .magazine-story-continuation figure img {
-  max-height: min(65vh, 640px);
+  max-height: none;
   object-fit: contain;
 }
 
@@ -429,5 +484,265 @@ details[open] {
 
   .magazine-page {
     padding: 1.1rem;
+  }
+
+}
+
+@media print {
+  @page {
+    size: letter portrait;
+    margin: 0;
+  }
+
+  body:has(#magazine-section:not(.hidden)) {
+    display: block;
+    min-height: 0;
+    background: #f8f7f2;
+    color: #171613;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body:has(#magazine-section:not(.hidden)) > header,
+  body:has(#magazine-section:not(.hidden)) > footer,
+  body:has(#magazine-section:not(.hidden)) > #scroll-progress,
+  body:has(#magazine-section:not(.hidden)) > main > :not(#magazine-section) {
+    display: none !important;
+  }
+
+  body:has(#magazine-section:not(.hidden)) > main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #magazine-section {
+    display: block !important;
+    position: static;
+    left: auto;
+    width: 100%;
+    transform: none;
+  }
+
+  #magazine-section > .magazine-page + .magazine-page {
+    margin-top: 0;
+  }
+
+  .magazine-page {
+    box-sizing: border-box;
+    width: 8.5in;
+    min-height: 11in;
+    padding: 10mm;
+    border: 0;
+    box-shadow: none;
+    background: #f8f7f2;
+    break-inside: avoid;
+  }
+
+  .magazine-page-one {
+    break-after: page;
+  }
+
+  .magazine-page-heartbeat {
+    break-after: page;
+  }
+
+  .magazine-page-two {
+    padding-bottom: 5mm;
+  }
+
+  .magazine-masthead {
+    margin-bottom: 5mm;
+    padding: 2mm 0 3mm;
+    border-top-width: 1.2pt;
+  }
+
+  .magazine-meta,
+  .magazine-page-heading,
+  .magazine-page-footer {
+    gap: 3mm;
+    font-size: 5.5pt;
+    letter-spacing: 0.1em;
+  }
+
+  .magazine-name {
+    margin-top: 3mm;
+    font-size: 24pt;
+    line-height: 1.05;
+  }
+
+  .magazine-deck {
+    margin-top: 2mm;
+    font-size: 8pt;
+  }
+
+  .magazine-story-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 7mm;
+  }
+
+  .magazine-left-column,
+  .magazine-right-column {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 4mm;
+  }
+
+  .magazine-story {
+    break-inside: avoid;
+  }
+
+  .magazine-story > div:first-child {
+    display: none;
+  }
+
+  .magazine-story > div:nth-child(2) {
+    padding: 0;
+  }
+
+  .magazine-story h3 {
+    margin: 1.5mm 0;
+    font-size: 16pt;
+    line-height: 1.08;
+  }
+
+  .magazine-story-heartbeat h3 {
+    margin: 1mm 0 0.5mm;
+    font-size: 16pt;
+  }
+
+  .magazine-story-kicker,
+  .magazine-story-byline {
+    font-size: 5.8pt;
+  }
+
+  .magazine-story-kicker {
+    margin-bottom: 1mm;
+  }
+
+  .magazine-story-heartbeat figure {
+    float: left;
+    width: 46%;
+    max-width: 46%;
+    margin: 0 5mm 1mm 0 !important;
+  }
+
+  .magazine-page-heartbeat .magazine-story-heartbeat figure img {
+    max-height: 60mm;
+  }
+
+  .magazine-page-heartbeat .magazine-story-heartbeat figure figcaption {
+    font-size: 4.8pt;
+  }
+
+  .magazine-story-heartbeat blockquote {
+    margin: 1mm 0 !important;
+  }
+
+  .magazine-heartbeat-copy {
+    columns: auto;
+  }
+
+  .magazine-story-heartbeat .magazine-heartbeat-copy p {
+    break-inside: avoid;
+    font-size: 7.4pt;
+    line-height: 1.24;
+  }
+
+  .magazine-story-heartbeat .magazine-heartbeat-copy > p + p {
+    margin-top: 1.2mm;
+  }
+
+  .magazine-story-heartbeat blockquote {
+    font-size: 8pt;
+    line-height: 1.2;
+  }
+
+  .magazine-story p,
+  .magazine-story blockquote {
+    font-size: 5.1pt;
+    line-height: 1.1;
+  }
+
+  .magazine-story .flex.flex-wrap {
+    gap: 1.5mm;
+    margin-bottom: 2mm;
+  }
+
+  .magazine-story .flex.flex-wrap span {
+    font-size: 5.2pt;
+    letter-spacing: 0.1em;
+  }
+
+  .magazine-story p.mt-3.mb-7 {
+    margin: 0 0 2mm;
+    font-size: 5.8pt;
+  }
+
+  .magazine-story blockquote {
+    margin: 2mm 0 !important;
+    padding: 1mm 2mm;
+    font-size: 7pt;
+  }
+
+  .magazine-story .space-y-5 > p + p {
+    margin-top: 0.8mm;
+  }
+
+  .magazine-story figure {
+    margin: 1.5mm 0 !important;
+    border-width: 0.5pt;
+  }
+
+  .magazine-story figure img {
+    max-height: 58mm;
+    object-fit: contain;
+  }
+
+  .magazine-story figure figcaption {
+    padding: 1mm 1.5mm;
+    font-size: 5pt;
+    letter-spacing: 0;
+  }
+
+  .magazine-continue-note,
+  .magazine-continuation-label {
+    font-size: 5.2pt !important;
+    letter-spacing: 0.08em;
+  }
+
+  .magazine-continuation-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: start;
+    gap: 6mm;
+  }
+
+  .magazine-story-continuation figure img {
+    max-height: 85mm;
+  }
+
+  .magazine-continuation-copy h3 {
+    margin: 1mm 0 2mm;
+    font-size: 17pt;
+  }
+
+  .magazine-story-ognibir figure {
+    width: 82%;
+    margin: 2mm auto !important;
+  }
+
+  .magazine-story-ognibir figure img {
+    max-height: 90mm;
+  }
+
+  .magazine-page-footer {
+    margin-top: 4mm;
+    padding-top: 2mm;
+    border-top-width: 0.5pt;
   }
 }
