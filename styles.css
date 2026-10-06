@@ -218,6 +218,22 @@ details[open] {
   transform: translateX(-50%);
 }
 
+.magazine-tools {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  padding: 0.25rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+.magazine-tools a {
+  color: #f0a082;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .magazine-page {
   box-sizing: border-box;
   padding: clamp(1.25rem, 4vw, 3.5rem);
@@ -821,6 +837,10 @@ details[open] {
 
 /* Readable print scale for magazine text and captions. */
 @media print {
+  .magazine-tools {
+    display: none !important;
+  }
+
   .magazine-page {
     break-inside: auto;
   }
