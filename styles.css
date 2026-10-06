@@ -464,12 +464,84 @@ details[open] {
   margin-bottom: 1.5rem;
 }
 
+.industry-page-intro {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #c9c6bd;
+}
+
+.industry-page-intro h2 {
+  margin: 0.35rem 0;
+  color: #171613;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.industry-page-intro > p:not(.magazine-story-kicker):not(.magazine-story-byline) {
+  margin: 0.5rem 0;
+  color: #575249;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+}
+
+.industry-story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.75rem);
+}
+
+.industry-story {
+  min-width: 0;
+}
+
+.industry-story h3 {
+  margin: 0 0 0.75rem;
+  color: #171613;
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.industry-story figure {
+  margin: 0 0 0.8rem;
+}
+
+.industry-story figure img {
+  display: block;
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.industry-story figure figcaption {
+  padding: 0.45rem 0;
+  color: #655f55;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.industry-story p {
+  margin: 0 0 0.9rem;
+  color: #39362f;
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 700px) {
   #magazine-section {
     width: calc(100vw - 1rem);
   }
 
   .magazine-story-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .industry-story-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -744,5 +816,99 @@ details[open] {
     margin-top: 4mm;
     padding-top: 2mm;
     border-top-width: 0.5pt;
+  }
+}
+
+/* Readable print scale for magazine text and captions. */
+@media print {
+  .magazine-page {
+    break-inside: auto;
+  }
+
+  .magazine-story p,
+  .magazine-story blockquote {
+    font-size: 8.2pt;
+    line-height: 1.32;
+  }
+
+  .magazine-story-heartbeat .magazine-heartbeat-copy p {
+    font-size: 8.2pt;
+    line-height: 1.32;
+  }
+
+  .magazine-story-kicker,
+  .magazine-story-byline,
+  .magazine-story figure figcaption,
+  .magazine-meta,
+  .magazine-page-heading,
+  .magazine-page-footer {
+    font-size: 7pt;
+  }
+
+  .magazine-page-industry {
+    break-before: page;
+    break-after: auto;
+  }
+
+  .industry-page-intro {
+    margin-bottom: 4mm;
+    border-bottom: 1px solid #c9c6bd;
+  }
+
+  .industry-page-intro h2 {
+    margin: 1mm 0;
+    font-family: var(--font-serif);
+    font-size: 23pt;
+    line-height: 1.05;
+  }
+
+  .industry-page-intro > p:not(.magazine-story-kicker):not(.magazine-story-byline) {
+    margin: 1mm 0 2mm;
+    color: #575249;
+    font-family: var(--font-serif);
+    font-size: 9pt;
+  }
+
+  .industry-story-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5mm;
+  }
+
+  .industry-story {
+    min-width: 0;
+    break-inside: avoid;
+  }
+
+  .industry-story h3 {
+    margin: 0 0 2mm;
+    color: #171613;
+    font-family: var(--font-serif);
+    font-size: 15pt;
+    line-height: 1.05;
+  }
+
+  .industry-story figure {
+    margin: 0 0 2mm;
+  }
+
+  .industry-story figure img {
+    width: 100%;
+    height: 35mm;
+    object-fit: cover;
+  }
+
+  .industry-story figure figcaption {
+    padding: 1mm 0;
+    font-size: 6.5pt;
+    line-height: 1.2;
+  }
+
+  .industry-story p {
+    margin: 0 0 2.2mm;
+    color: #39362f;
+    font-family: var(--font-serif);
+    font-size: 8pt;
+    line-height: 1.3;
   }
 }
