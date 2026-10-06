@@ -480,6 +480,15 @@ details[open] {
   margin-bottom: 1.5rem;
 }
 
+.magazine-continuation-copy h4 {
+  margin: 1.25rem 0 0.6rem;
+  color: #28614f;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
 .industry-page-intro {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
@@ -504,7 +513,7 @@ details[open] {
 
 .industry-story-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(1rem, 2vw, 1.75rem);
 }
 
@@ -530,6 +539,38 @@ details[open] {
   width: 100%;
   height: 170px;
   object-fit: cover;
+}
+
+.industry-story:last-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: clamp(1rem, 2vw, 1.75rem);
+  align-items: start;
+}
+
+.industry-story:last-child h3 {
+  grid-column: 1 / -1;
+}
+
+.industry-story:last-child figure {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+}
+
+.industry-story:last-child figure img {
+  height: 250px;
+  object-fit: contain;
+  background: #efeee9;
+}
+
+.industry-story:last-child p {
+  grid-column: auto;
+}
+
+.industry-story-copy {
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .industry-story figure figcaption {
@@ -561,6 +602,20 @@ details[open] {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .industry-story:last-child {
+    grid-column: auto;
+    display: block;
+  }
+
+  .industry-story:last-child figure img {
+    height: auto;
+    max-height: 360px;
+  }
+
+  .industry-story-copy {
+    display: contents;
+  }
+
   .magazine-continuation-layout {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -579,7 +634,7 @@ details[open] {
 @media print {
   @page {
     size: letter portrait;
-    margin: 0;
+    margin: 0.35in;
   }
 
   body:has(#magazine-section:not(.hidden)) {
@@ -619,9 +674,9 @@ details[open] {
 
   .magazine-page {
     box-sizing: border-box;
-    width: 8.5in;
-    min-height: 11in;
-    padding: 10mm;
+    width: 100%;
+    min-height: 10.3in;
+    padding: 7mm;
     border: 0;
     box-shadow: none;
     background: #f8f7f2;
@@ -819,6 +874,15 @@ details[open] {
     font-size: 17pt;
   }
 
+  .magazine-continuation-copy h4 {
+    margin: 2mm 0 1mm;
+    color: #28614f;
+    font-family: var(--font-serif);
+    font-size: 12pt;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
   .magazine-story-ognibir figure {
     width: 82%;
     margin: 2mm auto !important;
@@ -891,13 +955,35 @@ details[open] {
 
   .industry-story-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 5mm;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6mm 5mm;
   }
 
   .industry-story {
     min-width: 0;
     break-inside: avoid;
+  }
+
+  .industry-story:last-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    column-gap: 5mm;
+    align-items: start;
+  }
+
+  .industry-story:last-child h3 {
+    grid-column: 1 / -1;
+  }
+
+  .industry-story:last-child figure {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+  }
+
+  .industry-story-copy {
+    grid-column: 2;
+    grid-row: 2;
   }
 
   .industry-story h3 {
@@ -918,6 +1004,12 @@ details[open] {
     object-fit: cover;
   }
 
+  .industry-story:last-child figure img {
+    height: 64mm;
+    object-fit: contain;
+    background: #efeee9;
+  }
+
   .industry-story figure figcaption {
     padding: 1mm 0;
     font-size: 6.5pt;
@@ -925,10 +1017,27 @@ details[open] {
   }
 
   .industry-story p {
-    margin: 0 0 2.2mm;
+    margin: 0 0 2.8mm;
     color: #39362f;
     font-family: var(--font-serif);
     font-size: 8pt;
     line-height: 1.3;
+  }
+
+  .magazine-page-industry {
+    min-height: 10.3in;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .magazine-page-industry .industry-story-grid {
+    flex: 1;
+    align-content: start;
+    row-gap: 7mm;
+  }
+
+  .magazine-page-industry .magazine-page-footer {
+    margin-top: auto;
+    padding-top: 2mm;
   }
 }
